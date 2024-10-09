@@ -1,6 +1,6 @@
 import '../sass/Header.scss'
 import { Link } from 'react-router-dom'
-import argentBankLogo from '../images/argentBankLogo.png' // Assurez-vous que le chemin est correct
+import argentBankLogo from '../images/argentBankLogo.png' 
 
 function Header() {
     return (

@@ -1,17 +1,16 @@
 import '../sass/Cardhome.scss'
+// import iconChAT from '../images/icon-chat.png'
+import { useState } from 'react'
 
-function Cardhome() {
+function Cardhome({ icon, title, text }) {
     return (
         <>
-            <section className="container-home">
-                <div className="container-img">
-                    <section className='container-text'>
-                        <p class="subtitle">No fees.</p>
-                        <p class="subtitle">No minimum deposit.</p>
-                        <p class="subtitle">High interest rates.</p>
-                        <p class="text">Open a savings account with Argent Bank today!</p>
-                    </section>
-                </div>
+            <section className="container-Cardhome ">
+                <article className="container-text">
+                    <img src={icon} className="img-cardHome" alt="Icon" />
+                    <h3 className="feature-item-title">{title}</h3>
+                    <p className="text-card">{text}</p>
+                </article>
             </section>
         </>
     )

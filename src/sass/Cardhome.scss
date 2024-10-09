@@ -1,0 +1,35 @@
+.container-Cardhome {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    .container-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px;
+        width: 100%;
+
+        .img-cardHome {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100px;
+            padding: 25px;
+            border-radius: 50%;
+            border: 10px #00bc77 solid;
+        }
+
+        .feature-item-title {
+            font-weight: bolder;
+            font-size: 1.4rem;
+            margin: 20px;
+        }
+        
+        .text-card {
+            font-size: 1.1rem;
+            line-height: 20px;
+        }
+    }
+}

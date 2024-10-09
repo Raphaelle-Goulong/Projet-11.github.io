@@ -1,0 +1,38 @@
+.container-home {
+    width: 100%;
+    height: 100vh;
+    // background-color: orange;
+
+    .container-img {
+        background-image: url('../images/bank-tree.jpeg');
+        background-position: 0% 33%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 440px;
+        position: relative;
+        .container-text {
+            background-color: white;
+            // width: 400px;
+            position: absolute;
+            top: 55px;
+            right: 55px;
+            width: 325px;
+            margin: 2rem;
+            padding: 2.5rem;
+            text-align: left;
+    // margin: 0 auto;
+            .subtitle {
+                font-size: 1.7rem;
+                font-weight: bold;
+                line-height: 30px;
+            }
+            .text {
+                margin-top: 20px;
+                font-size: 1.3rem;
+                line-height: 25px;
+
+                
+            }
+        }
+    }
+}

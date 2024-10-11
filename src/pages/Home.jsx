@@ -32,7 +32,7 @@ function Home({ icon, title, text }) {
                     <Cardhome
                         icon={iconSecurity}
                         title="Security you can trust"
-                        text=" We use top of the line encryption to make sure your data and money is always safe."
+                        text=" We use top of the line encryption to make sure your data and money 000000is always safe."
                     />
                 </section>
             </section>

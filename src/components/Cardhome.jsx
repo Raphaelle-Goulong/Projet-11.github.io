@@ -1,5 +1,5 @@
 import '../sass/Cardhome.scss'
-// import iconChAT from '../images/icon-chat.png'
+
 import { useState } from 'react'
 
 function Cardhome({ icon, title, text }) {

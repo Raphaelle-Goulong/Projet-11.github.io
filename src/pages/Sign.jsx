@@ -1,5 +1,5 @@
 import '../sass/Sign.scss'
-
+import Btngreen from '../components/Btngreen'
 function Sign() {
     return (
         <>
@@ -10,22 +10,23 @@ function Sign() {
 
                     <form>
                         <div className="input-wrapper">
-                            <label for="username">Username</label>
+                            <label htmlFor="username">Username</label>
                             <input type="text" id="username" />
                         </div>
                         <div className="input-wrapper">
-                            <label for="password">Password</label>
+                            <label htmlFor="password">Password</label>
                             <input type="password" id="password" />
                         </div>
                         <div className="input-remember">
                             <input type="checkbox" id="remember-me" />
-                            <label for="remember-me">Remember me</label>
+                            <label htmlFor="remember-me">Remember me</label>
                         </div>
 
-                        <input
+                        <Btngreen
+                        text="Sign In"
                             type="submit"
                             value="Sign In"
-                            className="sign-in-button"
+                            className="btn-green"
                             id="btn_send"
                         />
                     </form>

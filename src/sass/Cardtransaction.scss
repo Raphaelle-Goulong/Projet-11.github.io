@@ -1,0 +1,29 @@
+.container-transaction {
+    background-color: white;
+    width: 80%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 20px 0;
+    .card-transaction {
+        display: flex;
+        justify-content: flex-start;
+        // background-color: rgb(179, 31, 31);
+
+        flex-direction: column;
+        .account-title {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+        .account-amount {
+       
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        // .account-amount-description {
+        //     // margin: 0;
+        // }
+    }
+}

@@ -6,9 +6,9 @@ function Cardtransaction({title, sold, description}) {
         <>
             <div className="container-transaction">
                 <div className="card-transaction">
-                    <h3 class="account-title">{title}</h3>
-                    <p class="account-amount">{sold}</p>
-                    <p class="account-amount-description">{description}</p>
+                    <h3 className="account-title">{title}</h3>
+                    <p className="account-amount">{sold}</p>
+                    <p className="account-amount-description">{description}</p>
                 </div>
                 <div className="card-transaction-button">
                     <Btngreen text="View transactions"/>

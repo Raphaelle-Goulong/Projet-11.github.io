@@ -23,6 +23,13 @@
             font-weight: bolder;
             margin: 20px;
         }
+        .error {
+            width: 250px;
+            padding: 10px;
+            color: red;
+            display: none;
+            
+        }
         .input-wrapper {
             display: flex;
             flex-direction: column;
@@ -42,7 +49,7 @@
                 margin-left: 0.25rem;
             }
         }
-        .btn-green{
+        .btn-green {
             display: block;
             width: 100%;
             padding: 8px;

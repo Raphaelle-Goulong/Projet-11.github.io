@@ -1,16 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../sass/Header.scss'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import argentBankLogo from '../images/argentBankLogo.png' 
 
 function Header() {
-    // Utilisez un état pour suivre si l'utilisateur est connecté
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [username, setUsername] = useState('Tony'); // Remplacez 'Tony' par le nom d'utilisateur réel
+    const [username, setUsername] = useState('');
+    const navigate = useNavigate();
+
+    // Vérifier le token dans le localStorage au chargement du composant
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        const storedUsername = localStorage.getItem('username'); // Supposons que le nom d'utilisateur soit stocké
+        if (token) {
+            setIsLoggedIn(true);
+            setUsername(storedUsername || 'User'); // Utilise un nom par défaut si l'username n'est pas stocké
+        }
+    }, []);
 
     const handleLogout = () => {
-        // Ajoutez ici la logique de déconnexion
+        // Supprimer le token et déconnecter l'utilisateur
+        localStorage.removeItem('token');
+        localStorage.removeItem('username');
         setIsLoggedIn(false);
+        navigate('/'); // Rediriger vers la page d'accueil après la déconnexion
     }
 
     return (
@@ -30,11 +43,11 @@ function Header() {
                 <div className="link-sign">
                     {isLoggedIn ? (
                         <>
-                            <Link to="/profile" className="main-nav-item">
+                            <Link to="/profile" className="main-nav-item Sign-in">
                                 <i className="fa fa-user-circle"></i>
                                 {username}
                             </Link>
-                            <Link to="/" className="main-nav-item" onClick={handleLogout}>
+                            <Link to="/" className="main-nav-item Sign-in" onClick={handleLogout}>
                                 <i className="fa fa-sign-out"></i>
                                 Sign Out
                             </Link>
@@ -48,7 +61,7 @@ function Header() {
                 </div>
             </nav>
         </>
-    )
+    );
 }
 
-export default Header
+export default Header;

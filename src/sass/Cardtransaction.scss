@@ -6,13 +6,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    margin: 20px 0;
+    margin: 20px 0; 
     .card-transaction {
         display: flex;
         justify-content: flex-start;
         // background-color: rgb(179, 31, 31);
-
         flex-direction: column;
+        text-align: left;
         .account-title {
             font-size: 1rem;
             font-weight: normal;

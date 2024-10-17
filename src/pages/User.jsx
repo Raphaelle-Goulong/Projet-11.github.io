@@ -1,15 +1,24 @@
 import '../sass/User.scss'
 import Btngreen from '../components/Btngreen'
 import Cardtransaction from '../components/Cardtransaction'
+import { useSelector } from 'react-redux'
 
 function User() {
+
+    const user =  useSelector((state) => state.userReducer)
+
+// console.log(user);
+
+
+
     return (
         <>
             <div className="container-user">
                 <h1>
                     Welcome back
                     <br />
-                    Tony Jarvis!
+                    {/* Affichage du prénom et du nom avec un espace, et gestion de l'état de chargement */}
+                    {user.body ? `${user.body.firstName || ""} ${user.body.lastName || ""}` : "Loading..."}
                 </h1>
                 <Btngreen text="Edit Name" />
                 <div className="container-account-user">

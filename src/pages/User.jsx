@@ -9,8 +9,6 @@ function User() {
 
 // console.log(user);
 
-
-
     return (
         <>
             <div className="container-user">
@@ -18,7 +16,7 @@ function User() {
                     Welcome back
                     <br />
                     {/* Affichage du prénom et du nom avec un espace, et gestion de l'état de chargement */}
-                    {user.body ? `${user.body.firstName || ""} ${user.body.lastName || ""}` : "Loading..."}
+                    {user.userInfo? `${user.userInfo.firstName || ""} ${user.userInfo.lastName || ""}` : "Loading..."}
                 </h1>
                 <Btngreen text="Edit Name" />
                 <div className="container-account-user">

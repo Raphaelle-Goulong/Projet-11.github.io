@@ -6,8 +6,17 @@ import Header from '../components/Header'
 import Home from './Home'
 import Sign from './Sign'
 import User from './User'
-
+import { useDispatch } from 'react-redux';
+import { checkAuthentication } from '../actions/user.action';
+import React, { useEffect } from 'react';
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(checkAuthentication()); // Vérifie l'authentification au chargement de l'application
+  }, [dispatch]);
+
   return (
     <BrowserRouter>
             <>

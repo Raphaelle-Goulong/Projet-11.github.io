@@ -1,13 +1,24 @@
 import '../sass/User.scss'
 import Btngreen from '../components/Btngreen'
+import EditName from '../components/EditName'
 import Cardtransaction from '../components/Cardtransaction'
 import { useSelector } from 'react-redux'
+import { useState } from 'react'
 
 function User() {
+    const user = useSelector((state) => state.user)
 
-    const user =  useSelector((state) => state.user)
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
-// console.log(user);
+    const openModal = () => {
+        setIsModalOpen(true)
+        console.log("Opening modal")
+    }
+
+    const closeModal = () => {
+        setIsModalOpen(false)
+        console.log("Closing modal")
+    }
 
     return (
         <>
@@ -15,10 +26,15 @@ function User() {
                 <h1>
                     Welcome back
                     <br />
-                    {/* Affichage du prénom et du nom avec un espace, et gestion de l'état de chargement */}
-                    {user.userInfo? `${user.userInfo.firstName || ""} ${user.userInfo.lastName || ""}` : "Loading..."}
+                    {user.userInfo ? `${user.userInfo.firstName || ""} ${user.userInfo.lastName || ""}` : "Loading..."}
                 </h1>
-                <Btngreen text="Edit Name" />
+                <Btngreen text="Edit Name" onClick={openModal} />
+
+                
+                {isModalOpen && (
+                    <EditName closeModal={closeModal} />
+                )}
+
                 <div className="container-account-user">
                     <Cardtransaction
                         title="Argent Bank Checking (x8349)"
@@ -33,7 +49,7 @@ function User() {
                     <Cardtransaction
                         title="Argent Bank Checking (x8349)"
                         sold="$184.30"
-                        description="Available Balance"
+                        description="Current Balance"
                     />
                 </div>
             </div>

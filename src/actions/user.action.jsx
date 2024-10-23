@@ -55,16 +55,29 @@ export const logout = () => {
         });
     };
 };
+// export const checkAuthentication = () => {
+//     return (dispatch) => {
+//         const token = localStorage.getItem('token'); // Récupérer le token du localStorage
+
+//         if (token) {
+//             dispatch(loginSuccess(token)); // Authentifier l'utilisateur
+
+//             // Ici, tu peux également appeler getUser pour récupérer les infos de l'utilisateur
+            
+//              // Récupérer les informations de l'utilisateur
+//         } else {
+//             dispatch(logout()); // Déconnecter l'utilisateur s'il n'y a pas de token
+//         }
+//     };
+// };
+
 export const checkAuthentication = () => {
     return (dispatch) => {
         const token = localStorage.getItem('token'); // Récupérer le token du localStorage
 
         if (token) {
             dispatch(loginSuccess(token)); // Authentifier l'utilisateur
-
-            // Ici, tu peux également appeler getUser pour récupérer les infos de l'utilisateur
-            
-             // Récupérer les informations de l'utilisateur
+            dispatch(getUser()); // Charger les informations utilisateur après authentification
         } else {
             dispatch(logout()); // Déconnecter l'utilisateur s'il n'y a pas de token
         }

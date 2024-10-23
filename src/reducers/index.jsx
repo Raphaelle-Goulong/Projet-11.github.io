@@ -6,9 +6,9 @@ import authReducer from './auth.reducer'
 
 export default combineReducers({
     // Reducers
-    userReducer,
-    postReducer,
-    authReducer
+   user: userReducer,
+   posts: postReducer,
+   auth: authReducer
     
 
     

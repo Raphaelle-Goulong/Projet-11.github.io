@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 
 function User() {
 
-    const user =  useSelector((state) => state.userReducer)
+    const user =  useSelector((state) => state.user)
 
 // console.log(user);
 

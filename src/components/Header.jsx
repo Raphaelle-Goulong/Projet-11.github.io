@@ -76,10 +76,13 @@ import { logout } from '../actions/user.action';
 
 
 
+
 function Header() {
-    const isLoggedIn = useSelector((state) => state.userReducer.isAuthenticated);
-    const user =  useSelector((state) => state.userReducer)
-    console.log("Contenu du userReducer :", user);
+
+    const isLoggedIn = useSelector((state) => state.user?.isAuthenticated);
+    const userInfo =  useSelector((state) => state.user?.userInfo)
+    console.log("Contenu du userReducer :", userInfo);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -109,7 +112,7 @@ function Header() {
                             <Link to="/profile" className="main-nav-item Sign-in">
                                 <i className="fa fa-user-circle"></i>
 
-                                {user.userInfo.userName || ""}
+                                {userInfo?.userName || "Utilisateur"}
                             </Link>
                             <Link to="/" className="main-nav-item Sign-in" onClick={handleLogout}>
                                 <i className="fa fa-sign-out"></i>

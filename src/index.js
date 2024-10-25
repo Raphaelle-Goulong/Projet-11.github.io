@@ -13,7 +13,7 @@ import rootReducer from './reducers'
 // Importer l'action `getPosts`
 import { getPosts } from './actions/post.action';
 import { getUser } from './actions/user.action';
-import { getAuth } from './actions/auth.action';
+
 
 const store = configureStore({
     reducer: rootReducer,
@@ -25,7 +25,7 @@ const store = configureStore({
 
 store.dispatch(getPosts())
 store.dispatch(getUser())
-store.dispatch(getAuth())
+
 
 
 

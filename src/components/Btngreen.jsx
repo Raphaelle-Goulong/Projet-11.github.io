@@ -1,10 +1,10 @@
 import '../sass/Btngreen.scss'
 
-function Btngreen({text}) {
+function Btngreen({text, onClick}) {
     return (
         <>
             <div className='container-button'>
-                <button className='btn-green'>{text}</button>
+                <button onClick={onClick} className='btn-green'>{text}</button>
             </div>
         </>
     )

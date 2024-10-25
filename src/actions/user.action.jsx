@@ -6,6 +6,11 @@ export const GET_USER_LOADING = "GET_USER_LOADING";
 export const GET_USER_ERROR = "GET_USER_ERROR";
 export const LOGOUT = "LOGOUT";
 
+// Définir les updates pour mettre à jour les informations utilisateur
+export const UPDATE_USER_NAME = "UPDATE_USER_NAME";
+export const UPDATE_USER_NAME_SUCCESS = "UPDATE_USER_NAME_SUCCESS";
+export const UPDATE_USER_NAME_ERROR = "UPDATE_USER_NAME_ERROR";
+
 export const getUser = () => {
    return (dispatch) => {
         // Indiquer que le chargement commence
@@ -55,21 +60,6 @@ export const logout = () => {
         });
     };
 };
-// export const checkAuthentication = () => {
-//     return (dispatch) => {
-//         const token = localStorage.getItem('token'); // Récupérer le token du localStorage
-
-//         if (token) {
-//             dispatch(loginSuccess(token)); // Authentifier l'utilisateur
-
-//             // Ici, tu peux également appeler getUser pour récupérer les infos de l'utilisateur
-            
-//              // Récupérer les informations de l'utilisateur
-//         } else {
-//             dispatch(logout()); // Déconnecter l'utilisateur s'il n'y a pas de token
-//         }
-//     };
-// };
 
 export const checkAuthentication = () => {
     return (dispatch) => {
@@ -82,4 +72,30 @@ export const checkAuthentication = () => {
             dispatch(logout()); // Déconnecter l'utilisateur s'il n'y a pas de token
         }
     };
+};
+
+
+
+export const updateUserName = (newName) => {
+    return (dispatch) => {
+        const token = localStorage.getItem('token');
+
+        if (!token) {
+            dispatch({ type: UPDATE_USER_NAME_ERROR, payload: "Token manquant" });
+            return;
+        }
+
+        return axios.put("http://localhost:3001/api/v1/user/profile", { userName: newName }, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
+        .then((res) => {
+            dispatch({ type: UPDATE_USER_NAME_SUCCESS, payload: res.data.body });
+        })
+        .catch((err) => {
+            console.error("Erreur : ", err.response);
+            dispatch({ type: UPDATE_USER_NAME_ERROR, payload: err.response?.data?.message || "Erreur inconnue" });
+        });
+    }
 };

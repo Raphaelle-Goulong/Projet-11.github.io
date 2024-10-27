@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 
 
- const ProtectedRoutes = ({ children }) => {
+ const ProtectedRoutes = ({ }) => {
         const { isAuthenticated, loading } = useSelector((state) => state.user);
       
         if (loading) {
@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux';
           return <Navigate to="/Sign" replace />;
         }
       
-        return children || <Outlet />;
+        return  <Outlet />;
       };
 
 export default ProtectedRoutes

@@ -12,12 +12,12 @@ function User() {
 
     const openModal = () => {
         setIsModalOpen(true)
-        console.log("Opening modal")
+        // console.log("Opening modal")
     }
 
     const closeModal = () => {
         setIsModalOpen(false)
-        console.log("Closing modal")
+        // console.log("Closing modal")
     }
 
     return (

@@ -11,7 +11,7 @@ function Cardtransaction({title, sold, description}) {
                     <p className="account-amount-description">{description}</p>
                 </div>
                 <div className="card-transaction-button">
-                    <Btngreen text="View transactions"/>
+                    <Btngreen text="View transactions" />
                 </div>
             </div>
         </>

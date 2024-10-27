@@ -1,10 +1,10 @@
 import '../sass/Home.scss'
 import Cardhome from '../components/Cardhome'
-import iconChat from '../images/icon-chat.png'
-import iconMoney from '../images/icon-money.png'
-import iconSecurity from '../images/icon-security.png'
+import iconChat from '../assets/images/icon-chat.webp'
+import iconMoney from '../assets/images/icon-money.webp'
+import iconSecurity from '../assets/images/icon-security.webp'
 
-function Home({ icon, title, text }) {
+function Home() {
     return (
         <>
             <section className="container-home">

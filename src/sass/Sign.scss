@@ -5,10 +5,10 @@
     display: flex;
     .card-Sign {
         display: flex;
-        // justify-content: center;
+        justify-content: center;
         flex-direction: column;
         width: 300px;
-        height: 350px;
+        height: 400px;
         box-sizing: border-box;
         background-color: white;
         margin: 0 auto;
@@ -25,7 +25,8 @@
         }
         .error {
             width: 250px;
-            padding: 10px;
+            // padding: 10px;
+            margin-bottom: 20px;
             color: red;
             display: none;
             

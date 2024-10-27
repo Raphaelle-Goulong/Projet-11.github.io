@@ -6,11 +6,17 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    margin: 20px 0; 
+    margin: 20px 0;
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        justify-content: center;
+    width: 75%;
+    height: 130px;
+    }
     .card-transaction {
         display: flex;
         justify-content: flex-start;
-        // background-color: rgb(179, 31, 31);
+
         flex-direction: column;
         text-align: left;
         .account-title {
@@ -18,10 +24,10 @@
             font-weight: normal;
         }
         .account-amount {
-       
             font-size: 2.5rem;
             font-weight: bold;
         }
+
         // .account-amount-description {
         //     // margin: 0;
         // }

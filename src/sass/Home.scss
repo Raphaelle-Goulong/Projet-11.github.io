@@ -3,7 +3,7 @@
     height: auto;
 
     .container-img {
-        background-image: url('../images/bank-tree.jpeg');
+        background-image: url('../assets/images/bank-tree.webp');
         background-position: 0% 33%;
         background-size: cover;
         background-repeat: no-repeat;
@@ -18,23 +18,36 @@
             margin: 2rem;
             padding: 2.5rem;
             text-align: left;
-
+            @media (max-width: 425px) {
+                position: relative;
+                right: 10px;
+                width: 200px;
+            }
             .subtitle {
                 font-size: 1.7rem;
                 font-weight: bold;
                 line-height: 30px;
+                @media (max-width: 768px) {
+                    font-size: 1.1rem;
+                    line-height: 25px;
+                }
             }
             .text {
                 margin-top: 20px;
                 font-size: 1.3rem;
                 line-height: 25px;
-
-                
+                @media (max-width: 768px) {
+                    font-size: 0.9rem;
+                    line-height: 20px;
+                }
             }
         }
     }
-    .container-circles{
+    .container-circles {
         display: flex;
         // height: 400px;
+        @media (max-width: 768px) {
+            flex-wrap: wrap;
+        }
     }
 }

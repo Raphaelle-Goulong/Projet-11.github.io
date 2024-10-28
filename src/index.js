@@ -22,12 +22,7 @@ const store = configureStore({
 
 
 
-
-
 store.dispatch(getUser())
-
-
-
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

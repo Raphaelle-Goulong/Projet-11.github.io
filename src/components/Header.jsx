@@ -12,7 +12,6 @@ function Header() {
 
     const isLoggedIn = useSelector((state) => state.user?.isAuthenticated);
     const userInfo =  useSelector((state) => state.user?.userInfo)
-    console.log("Contenu du userReducer :", userInfo);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();

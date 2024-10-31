@@ -39,7 +39,7 @@ function Header() {
                 <div className="link-sign">
                     {isLoggedIn ? (
                         <>
-                            <Link to="/profile" className="main-nav-item Sign-in">
+                            <Link to="/user" className="main-nav-item Sign-in">
                                 <i className="fa fa-user-circle"></i>
 
                                 {userInfo?.userName || "Utilisateur"}
